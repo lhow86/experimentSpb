@@ -1,6 +1,5 @@
 package com.experimentSpb.business.controller;
 
-import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,7 +17,7 @@ public class TestController {
     public String test;
 
     @GetMapping("/hot")
-//    @SentinelResource("hot")
+//    @SentinelResource(value = "hot")
     public String get() {
         return "success";
     }

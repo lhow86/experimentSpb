@@ -39,10 +39,21 @@ repositories {
 dependencies {
 	compile("org.springframework.boot:spring-boot-starter-undertow:$springBootVersion")
 	compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
-	compile("org.springframework.boot:spring-boot-starter-actuator:$springBootVersion")
+	compile("org.springframework.boot:spring-boot-starter-aop:$springBootVersion")
 	compile("org.springframework.boot:spring-boot-starter-cache:$springBootVersion")
 	compile ("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
-
+	
+	//监控相关
+	compile(
+			"org.springframework.boot:spring-boot-starter-actuator:$springBootVersion"
+	)
+	compile(
+			"io.springfox:springfox-swagger2:2.6.1",
+			"io.springfox:springfox-swagger-ui:2.6.1"
+	)
+	//httpClient 解决连接nacos时报缺少包 NoClassDefFoundError: org/apache/http/impl/client/HttpClientBuilder
+	compile 'org.apache.httpcomponents:httpclient:4.5.6'
+	
 	//Apollo
 	compile 'com.ctrip.framework.apollo:apollo-client:1.2.0'
 	//sentinel
@@ -52,7 +63,8 @@ dependencies {
 			"net.logstash.logback:logstash-logback-encoder:4.11",
 			"org.projectlombok:lombok:1.18.8"
 	)
-	
+	//Nacos服务发现
+	compile 'com.alibaba.cloud:spring-cloud-alibaba-nacos-discovery:2.2.0.RELEASE'
 	
 
 	//加载本地依赖
