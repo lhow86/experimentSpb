@@ -1,5 +1,17 @@
+aliyun:
+  url: http://106.14.83.136
 spring:
-  application.name: demo
+  application.name: experimentSpb
   profiles.active: test
+  cloud:
+    sentinel:
+      filter:
+        #打开/关闭掉对Spring MVC端点的保护
+        enabled: true
+      transport:
+        port: 8719
+        dashboard: ${aliyun.url}:8080
 server:
   port: 8080
+app.id: ${spring.application.name}
+apollo.meta: ${aliyun.url}:8280

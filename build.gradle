@@ -1,13 +1,15 @@
 buildscript {
 	repositories {
-		maven { url 'https://plugins.gradle.org/m2/' }
-		maven { url 'http://192.168.118.127:8081/repository/maven-public/' }
+		mavenCentral()
+		maven {
+			url "https://plugins.gradle.org/m2/"
+		}
 	}
 
 	configurations {
 		compile.exclude module: "spring-boot-starter-tomcat"
 	}
-	
+
 	ext {
 		springBootVersion = "2.2.6.RELEASE"
 	}
@@ -20,7 +22,7 @@ buildscript {
 
 apply plugin: 'org.sonarqube'
 
-group = 'com.example'
+group = 'com.experimentSpb'
 version = '0.0.1-SNAPSHOT'
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
@@ -29,7 +31,7 @@ apply plugin: 'idea'
 sourceCompatibility = 1.8
 
 repositories {
-	maven { url 'https://plugins.gradle.org/m2/' }
+	maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
 	maven { url 'http://192.168.118.127:8081/repository/maven-public/' }
 }
 
@@ -40,6 +42,19 @@ dependencies {
 	compile("org.springframework.boot:spring-boot-starter-actuator:$springBootVersion")
 	compile("org.springframework.boot:spring-boot-starter-cache:$springBootVersion")
 	compile ("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
+
+	//Apollo
+	compile 'com.ctrip.framework.apollo:apollo-client:1.2.0'
+	//sentinel
+	compile 'com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel:2.2.1.RELEASE'
+	//日志
+	compile(
+			"net.logstash.logback:logstash-logback-encoder:4.11",
+			"org.projectlombok:lombok:1.18.8"
+	)
+	
+	
+
 	//加载本地依赖
 	compile fileTree(dir: 'lib', include: ['*.jar'])
 }
