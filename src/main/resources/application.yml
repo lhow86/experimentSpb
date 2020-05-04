@@ -9,8 +9,11 @@ spring:
         server-addr: ${aliyun.url}:8848
     sentinel:
       transport:
+        # 项目本地会启动一个服务的端口号，默认8719，用于与sentinel-dashboard通讯
         port: 8719
         dashboard: 106.14.83.136:8080
+      # 取消控制台懒加载
+      eager: true
 server:
   port: 8080
 #  servlet.context-path: /${spring.application.name}

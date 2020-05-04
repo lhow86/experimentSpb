@@ -1,4 +1,4 @@
-package com.experimentSpb;
+package com.experimentspb;
 
 import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
 import org.springframework.boot.SpringApplication;
