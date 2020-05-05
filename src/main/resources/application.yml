@@ -1,7 +1,8 @@
 aliyun:
   url: http://106.14.83.136
+#  url: http://172.19.139.228
 spring:
-  application.name: experimentSpb
+  application.name: experimentspb
   profiles.active: own
   cloud:
     nacos:
@@ -11,7 +12,7 @@ spring:
       transport:
         # 项目本地会启动一个服务的端口号，默认8719，用于与sentinel-dashboard通讯
         port: 8719
-        dashboard: 106.14.83.136:8080
+        dashboard: ${aliyun.url}:8080
       # 取消控制台懒加载
       eager: true
 server:
