@@ -2,7 +2,7 @@ aliyun:
   url: http://106.14.83.136
 spring:
   application.name: experimentSpb
-  profiles.active: test
+  profiles.active: own
   cloud:
     nacos:
       discovery:
@@ -15,7 +15,12 @@ spring:
       # 取消控制台懒加载
       eager: true
 server:
-  port: 8080
-#  servlet.context-path: /${spring.application.name}
+  port: 9090
+  servlet.context-path: /${spring.application.name}
+logging:
+  config: classpath:logback-${spring.profiles.active}.xml
+  level:
+    org.springframework: INFO
+    org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping: trace
 app.id: ${spring.application.name}
 apollo.meta: ${aliyun.url}:8280
