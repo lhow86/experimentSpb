@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
-@EnableApolloConfig
-@EnableDiscoveryClient
+//@EnableApolloConfig
+//@EnableDiscoveryClient
 public class Application {
 
 	public static void main(String[] args) {

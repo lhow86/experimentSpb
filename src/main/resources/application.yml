@@ -3,18 +3,18 @@ aliyun:
 #  url: http://172.19.139.228
 spring:
   application.name: experimentspb
-  profiles.active: own
-  cloud:
-    nacos:
-      discovery:
-        server-addr: ${aliyun.url}:8848
-    sentinel:
-      transport:
-        # 项目本地会启动一个服务的端口号，默认8719，用于与sentinel-dashboard通讯
-        port: 8719
-        dashboard: ${aliyun.url}:8080
-      # 取消控制台懒加载
-      eager: true
+  profiles.active: cus
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: ${aliyun.url}:8848
+#    sentinel:
+#      transport:
+#        # 项目本地会启动一个服务的端口号，默认8719，用于与sentinel-dashboard通讯
+#        port: 8719
+#        dashboard: ${aliyun.url}:8080
+#      # 取消控制台懒加载
+#      eager: true
 server:
   port: 9090
   servlet.context-path: /${spring.application.name}
@@ -23,5 +23,5 @@ logging:
   level:
     org.springframework: INFO
     org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping: trace
-app.id: ${spring.application.name}
-apollo.meta: ${aliyun.url}:8280
+#app.id: ${spring.application.name}
+#apollo.meta: ${aliyun.url}:8280

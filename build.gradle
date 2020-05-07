@@ -67,7 +67,7 @@ dependencies {
 			"org.projectlombok:lombok:1.18.8"
 	)
 	//Nacos服务发现
-	compile 'com.alibaba.cloud:spring-cloud-alibaba-nacos-discovery:2.2.0.RELEASE'
+//	compile 'com.alibaba.cloud:spring-cloud-alibaba-nacos-discovery:2.2.0.RELEASE'
 	
 
 	//加载本地依赖
