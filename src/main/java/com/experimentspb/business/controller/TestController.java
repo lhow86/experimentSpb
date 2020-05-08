@@ -12,6 +12,7 @@ public class TestController extends BaseController{
 
     @RequestMapping("/hot")
     public String get() {
+        log.info("~~~~~~");
         sentinelTestService.doSomeThing(test);
         return "O w O";
     }
