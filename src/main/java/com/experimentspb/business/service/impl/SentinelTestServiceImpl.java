@@ -11,10 +11,15 @@ import org.springframework.stereotype.Service;
 public class SentinelTestServiceImpl extends BaseService implements SentinelTestService {
 
     @Override
-    @SentinelResource(value = "doSomeThing2")
+    @SentinelResource(value = "doSomeThing2", fallback = "fallbackHandler")
     public void doSomeThing2(String str) {
         log.info("str-----" + str);
         throw new RuntimeException("发生异常");
+    }
+
+    // 熔断后的降级处理
+    public void fallbackHandler(String str) {
+        log.error("--------fallbackHandler：" + str);
     }
 
     @Override
@@ -27,5 +32,7 @@ public class SentinelTestServiceImpl extends BaseService implements SentinelTest
     public void exceptionHandler(String str, BlockException ex) {
         log.error("exceptionHandler: " + str, ex);
     }
+
+
 
 }
