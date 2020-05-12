@@ -8,8 +8,13 @@ import org.springframework.beans.factory.annotation.Value;
 @Slf4j
 public abstract class BaseController {
 
+    // test 金二
     @Value("${aliyun.test}")
     public String test;
+
+    // test apollo
+    @Value("${settings.test}")
+    public String settingsTest;
 
     @Autowired
     public SentinelTestService sentinelTestService;
