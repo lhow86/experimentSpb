@@ -15,7 +15,7 @@ spring:
         dashboard: ${aliyun.url}:8080
       # 取消控制台懒加载
       eager: true
-      datasource.ds:
+      datasource:
         apollo:
           namespaceName: application
           flowRulesKey: sentinel.flowRules
