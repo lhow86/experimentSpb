@@ -60,7 +60,7 @@ dependencies {
 	compile 'com.ctrip.framework.apollo:apollo-client:1.2.0'
 	//sentinel
 	compile 'com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel:2.2.1.RELEASE'
-	compile 'com.alibaba.csp:sentinel-datasource-apollo:1.7.1'
+//	compile 'com.alibaba.csp:sentinel-datasource-apollo:1.7.1'
 
 	//日志
 	compile(

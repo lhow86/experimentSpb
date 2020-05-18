@@ -15,11 +15,11 @@ spring:
         dashboard: ${aliyun.url}:8080
       # 取消控制台懒加载
       eager: true
-      datasource.ds:
-        apollo:
-          namespaceName: application
-          flowRulesKey: sentinel.flowRules
-          rule-type: flow
+#      datasource.ds:
+#        apollo:
+#          namespaceName: application
+#          flowRulesKey: sentinel.flowRules
+#          rule-type: flow
 server:
   port: 9090
   servlet.context-path: /${spring.application.name}
